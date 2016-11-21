@@ -1,4 +1,4 @@
-# MCMHweather
+# GMCMH1
 
 install.packages("devtools")
 
