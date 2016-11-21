@@ -2,4 +2,4 @@
 
 install.packages("devtools")
 
-devtools::install_github("junebonnie/MCMHweather")
+devtools::install_github("junebonnie/GMCMH1")
