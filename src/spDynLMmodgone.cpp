@@ -290,20 +290,22 @@ extern "C" {
             } else {
               acceptmarkbeta0[dim]=0;
             }
-            sumbeta0=0;
-            for (int dim=0; dim<p; dim++){
-              sumbeta0=sumbeta0+acceptmarkbeta0[dim];
-            }
 
-            if (sumbeta0==0 && runif(0.0,1.0)<prob){
-              acceptindicator=1;
-            } else if(sumbeta0>0){
-              acceptindicator=1;
-            } else {
-              acceptindicator=0;
-            }
+          }
+          sumbeta0=0;
+          for (int dim=0; dim<p; dim++){
+            sumbeta0=sumbeta0+acceptmarkbeta0[dim];
+          }
+
+          if (sumbeta0==0 && runif(0.0,1.0)<prob){
+            acceptindicator=1;
+          } else if(sumbeta0>0){
+            acceptindicator=1;
+          } else {
+            acceptindicator=0;
+          }
             //printf("%f,%f,%d\n",tempbeta0[0],tempbeta0[1],sumbeta0);
-         }
+         
        }while(acceptindicator==0);
          beta0[0]=tempbeta0[0];
          beta0[1]=tempbeta0[1];
@@ -443,24 +445,25 @@ extern "C" {
             } else {
               acceptmarkbeta[dim]=0;
             }
-            sumbeta=0;
-            for (int dim=0; dim<p; dim++){
-              sumbeta=sumbeta+acceptmarkbeta[dim];
-            }
+          }
+          sumbeta=0;
+          for (int dim=0; dim<p; dim++){
+            sumbeta=sumbeta+acceptmarkbeta[dim];
+          }
 
-            for (int dim=0; dim<p; dim++){
-              sumbeta=sumbeta+acceptmarkbeta[dim];
-            }
+          for (int dim=0; dim<p; dim++){
+            sumbeta=sumbeta+acceptmarkbeta[dim];
+          }
 
-            if (sumbeta==0 && runif(0.0,1.0)<prob){
-              acceptindicatorbeta=1;
-            } else if(sumbeta>0){
-              acceptindicatorbeta=1;
-            } else {
-              acceptindicatorbeta=0;
-            }
+          if (sumbeta==0 && runif(0.0,1.0)<prob){
+            acceptindicatorbeta=1;
+          } else if(sumbeta>0){
+            acceptindicatorbeta=1;
+          } else {
+            acceptindicatorbeta=0;
+          }
             //printf("%d,%d,%d\n",acceptmark[0],acceptmark[1],sum);
-         }
+         
        }while(acceptindicatorbeta==0);
 
 
